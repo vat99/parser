@@ -1,0 +1,7 @@
+PyMuPDF==1.19.0
+PyPDF2==1.26.0
+filetype==1.0.7
+w3lib==1.22.0
+xhtml2pdf==0.2.5
+ocrmypdf==11.3.2
+beautifulsoup4==4.9.1
