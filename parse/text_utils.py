@@ -13,7 +13,7 @@ def clean_text(doc_text: str) -> str:
         doc_text: input text to be cleaned
 
     Returns:
-
+        cleaned_text
     """
 
     text = doc_text.replace("\n", " ")

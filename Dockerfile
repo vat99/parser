@@ -3,9 +3,6 @@ FROM ubuntu:20.04
 # Set container as a root user:
 USER root
 
-# Copy the gamechanger-data parsing requirements file
-COPY requirements.txt .
-
 ENV TZ=US
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -19,10 +16,10 @@ RUN apt-get install bc
 RUN apt-get install -y wget
 RUN apt-get install -y unzip
 RUN apt-get install -y tesseract-ocr
-
 RUN apt-get install -y python3-pip
-RUN pip3 install -r requirements.txt --no-deps
 
-COPY src/ .
+COPY . /home/
+
+RUN pip3 install -r /home/requirements.txt --no-deps
 
 ENTRYPOINT ["bash"]

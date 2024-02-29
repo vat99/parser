@@ -1,4 +1,4 @@
-from src.text_utils import utf8_pass, clean_text
+from parse.text_utils import utf8_pass, clean_text
 
 
 def create_page_dict(page_num, page_text, doc_dict):
@@ -25,6 +25,6 @@ def handle_pages(doc_obj, doc_dict):
     doc_dict["page_count"] = 0
     doc_dict["pages"] = []
     for page_num, page in enumerate(doc_obj.pages()):
-        page_text = page.getText()
+        page_text = page.get_text()
         doc_dict["text"] = doc_dict["text"] + page_text
         handle_page(page_num, page_text, doc_dict)

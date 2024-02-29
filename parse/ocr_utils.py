@@ -7,11 +7,29 @@ Reference: https://ocrmypdf.readthedocs.io/en/latest/installation.html
 
 from pathlib import Path
 import typing as t
-from src.file_utils import is_pdf, is_ocr_pdf, is_encrypted_pdf
+from parse.file_utils import is_pdf, is_ocr_pdf, is_encrypted_pdf
 import ocrmypdf
 import sys
 from enum import Enum
 import subprocess as sub
+
+
+class PageCountParse(Exception):
+    """Could not parse the doc, failed page count check"""
+
+    pass
+
+
+class UnparseableDocument(Exception):
+    """Document was unsuitable for parsing, for some reason"""
+
+    pass
+
+
+class PageCountCheck(Exception):
+    """Could not parse the doc, failed page count check"""
+
+    pass
 
 
 class OCRJobType(Enum):
