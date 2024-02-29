@@ -1,2 +1,3 @@
 dist/*
-gc_parse.egg-info/*
+parse.egg-info/*
+build/*
